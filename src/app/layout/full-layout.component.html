@@ -1,0 +1,45 @@
+<nav class="navbar navbar-default" id="nav-menu-app">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <div class="row">
+                <div class="col-lg-2 col-md-2">
+                    <a class="navbar-brand">
+                        <!-- 
+                        <img width="30" [src]="'data:image/jpg;base64,'+setting.image">
+                        -->
+                    </a>
+                </div>
+                <div class="col-lg-8 col-md-8">
+                    <span class="navbar-brand">Angular 5 + Bootstrap 4</span>
+                </div>
+                <div class="col-lg-2 col-md-2">
+                    <a class="btn btn-outline-primary" id="btn-logout" (click)="logout()">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<nav id="lista-itens-menu">
+    <a class="item-btn-menu" > Dashboard </a>
+    <a class="item-btn-menu" > Category </a>
+    <a class="item-btn-menu" > Sub Category </a>
+    <!-- <a class="item-btn-menu" routerLink="/product"> Product </a>
+    <a class="item-btn-menu" routerLink="/sales"> Sales </a>
+    <a class="item-btn-menu" routerLink="/user"> User </a>
+    <a class="item-btn-menu" routerLink="/setting"> Settings </a> -->
+</nav>
+
+<main class="main">
+    <div class="container-fluid">
+        <router-outlet></router-outlet>
+    </div>
+</main>
+
+<div class="container-fluid">
+    <div class="row">
+        <footer class="app-footer">
+            <p style="text-align: center;"> By - @Smythy Costa. </p>
+        </footer>
+    </div>
+</div>

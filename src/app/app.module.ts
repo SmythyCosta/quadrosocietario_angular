@@ -1,5 +1,12 @@
-import { BrowserModule } from '@angular/platform-browser';
+// #################### [ Default Anglar ] ####################
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+
+
+// #################### [ Modules ] ####################
+import { AppRoutes } from './app.routes';
 
 
 import { AppComponent } from './app.component';
@@ -10,7 +17,10 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    HttpModule,
+    AppRoutes
   ],
   providers: [],
   bootstrap: [AppComponent]
