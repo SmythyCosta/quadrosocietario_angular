@@ -9,12 +9,16 @@ import { HttpModule } from '@angular/http';
 import { AppRoutes } from './app.routes';
 
 
+// #################### [ Layouts ] ####################
 import { AppComponent } from './app.component';
+import { FullLayoutComponent } from './layout/full-layout.component';
+
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FullLayoutComponent
   ],
   imports: [
     BrowserModule,

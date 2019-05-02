@@ -16,7 +16,7 @@ export const appRoutes: Routes = [
             title: 'Home'
         },
         children:[
-            // { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule' },
+            { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule' },
             // { path: 'category', loadChildren: './category/category.module#CategoryModule' },
         ]
     }
