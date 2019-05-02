@@ -17,7 +17,7 @@ export const appRoutes: Routes = [
         },
         children:[
             { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule' },
-            // { path: 'category', loadChildren: './category/category.module#CategoryModule' },
+            { path: 'empresas', loadChildren: './empresa/empresa.module#EmpresaModule' },
         ]
     }
 ];

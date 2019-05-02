@@ -16,4 +16,4 @@ import { EmpresaService }          from '../_services/empresa.service';
     declarations: [EmpresaListComponent, EmpresaFormComponent],
     providers:[EmpresaService]
 })
-export class CategoryModule { }
+export class EmpresaModule { }
