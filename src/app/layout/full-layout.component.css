@@ -30,21 +30,17 @@
     animation-iteration-count: 3;
 }
 
+#texto-rodape{
+    text-align: center;
+    color: blue;
+}
+
 @keyframes treme {
     0% {margin-left: 0;}
     25% {margin-left: 5px;}
     50% {margin-left: 0;}
     75% {margin-left: -5px;}
     100% {margin-left: 0;}
-}
-
-footer{
-    background-color: #f78b1f; 
-    min-height: 100px;
-    min-width: 208vh; 
-    color: #fff; 
-    padding-top: 40px;
-    position: absolute;
 }
 
 @media (min-width: 900px) {
