@@ -9,9 +9,6 @@ import { environment as env } from '../../environments/environment';
 @Injectable()
 export class EmpresaService {
 
-    api_url = 'http://localhost/quadrosocietario-symfony/api-socios-empresa/web/api/v1';
-    appi = 'http://localhost/quadrosocietario-symfony/api-socios-empresa/web/api/v1/empresas/';
-
     constructor(private http: Http) { }
 
     /**
@@ -19,7 +16,6 @@ export class EmpresaService {
      * @return json 
      */
     getEmpresas() {
-        // let headers = new Headers({'Content-Type': 'application/json'}); {headers:headers}
         return this.http.get(env.baseApiUrl + 'empresas')
                         .map((response: Response) => response.json());
     }
@@ -29,7 +25,8 @@ export class EmpresaService {
      * @return json 
      */
     getEmpresa(id) {
-        return this.http.get(this.api_url+'/'+id).map((response: Response) => response.json());
+        return this.http.get(env.baseApiUrl + 'empresas/'+id)
+                        .map((response: Response) => response.json());
     }
 
     /**
@@ -37,15 +34,15 @@ export class EmpresaService {
      * @param json 
      */
     cadastrarEmpresa(data) {
-        return this.http.post(this.api_url+'/empresas/', data);
+        return this.http.post(env.baseApiUrl + 'empresas', data);
     }
 
     /**
      * atualizar empresa
      * @param json 
      */
-    atualizarEmpresa(data){
-        return this.http.put(this.api_url+'/empresas/', data);
+    atualizarEmpresa(id, data){
+        return this.http.put(env.baseApiUrl + 'empresas/'+id, data);
     }
 
     /**

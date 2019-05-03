@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  baseApiUrl: 'http://localhost/quadrosocietario_Laravel/public/api/'
+  baseApiUrl: 'http://localhost/quadrosocietario_Laravel/public/api/v1/'
 };

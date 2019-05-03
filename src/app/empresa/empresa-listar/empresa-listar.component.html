@@ -23,13 +23,13 @@
         </div>
 
 
-        <!-- <div class="row">
+        <div class="row">
             <div class="col-md-12">
-                <button type="button" class="btn btn-danger" routerLink="/category">List</button>
-                <button type="button" class="btn btn-primary" routerLink="/category/form">Add</button>
-                Rows {{countJson}}
+                <button type="button" class="btn btn-danger" routerLink="/empresas">Listar</button>
+                <button type="button" class="btn btn-primary" routerLink="/empresas/cadastrar">Adicionar</button>
+                <!-- Rows {{countJson}} -->
             </div>
-        </div> -->
+        </div>
 
         <div class="row">
             <div class="col-md-12">
@@ -55,7 +55,7 @@
                                 <td>{{obj.nome}}</td>
                                 <td>
                                         <button type="button" class="btn btn-success btn-sm"> Exibir Socios </button>
-                                        <button type="button" class="btn btn-primary btn-sm"> Editar </button>
+                                        <button type="button" class="btn btn-primary btn-sm" [routerLink]="['/empresas/editar/', obj.id]"> Editar </button>
                                         <button type="button" class="btn btn-danger btn-sm" (click)="deletarEmpresa(obj.id, obj.nome)"> Excluir </button>
                                     <!-- <button type="button" class="btn btn-danger btn-sm" > Delete </button> 
 

@@ -1,22 +1,32 @@
 import { NgModule }     from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule }  from '@angular/forms';
+import { FormsModule, ReactiveFormsModule }  from '@angular/forms';
 
-import { EmpresaListComponent }    from './empresa-list/empresa-list.component';
-import { EmpresaFormComponent }    from './empresa-form/empresa-form.component';
 import { EmpresaRoutes }           from './empresa-routes';
 import { EmpresaService, AlertService }          from '../_services/index';
 import { DirectivasModule } from '../_directives/directives.module';
+
+import { EmpresaListarComponent } from './empresa-listar/empresa-listar.component';
+import { EmpresaCadastrarComponent } from './empresa-cadastrar/empresa-cadastrar.component';
+import { EmpresaEditarComponent } from './empresa-editar/empresa-editar.component';
+import { SharedModule } from '../_shared/shared.module';
+
 
 
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
+        ReactiveFormsModule,
         DirectivasModule,
+        SharedModule,
         EmpresaRoutes
     ],
-    declarations: [EmpresaListComponent, EmpresaFormComponent],
+    declarations: [
+        EmpresaListarComponent, 
+        EmpresaCadastrarComponent, 
+        EmpresaEditarComponent
+    ],
     providers:[EmpresaService, AlertService]
 })
 export class EmpresaModule { }
