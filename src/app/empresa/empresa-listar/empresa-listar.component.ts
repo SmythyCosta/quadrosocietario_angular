@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Http } from '@angular/http';
 import { EmpresaService, AlertService } from '../../_services/index';
+import { Empresa } from '../../_models/index';
+import { appConfig } from '../../app.config';
+
 
 @Component({
   selector: 'app-empresa-listar',
@@ -10,10 +13,7 @@ import { EmpresaService, AlertService } from '../../_services/index';
 })
 export class EmpresaListarComponent implements OnInit {
 
-  titlePage: String = "Empresas";
-  countJson: number;
-
-  listEmpresas: Object[];
+  empresas: Array<Empresa>;
 
   constructor(
     public router: Router,
@@ -29,10 +29,10 @@ export class EmpresaListarComponent implements OnInit {
   ListarEmpresas() {
     this.empresaService.getEmpresas()
       .subscribe(data => {
-        this.listEmpresas = data.empresas;
+        this.empresas = data.empresas;
 
-        //console.log('JSON com lista de empresas')
-        //console.log(this.listEmpresas);
+        // console.log('JSON com lista de empresas')
+        // console.log(this.empresas);
       });
   }
 
@@ -41,12 +41,13 @@ export class EmpresaListarComponent implements OnInit {
     if (result) {
       this.empresaService.deletarEmpresa(id)
         .subscribe(data => {
-          this.alertService.success('Empresa removida com sucesso.', true);
+          this.alertService.success(appConfig.mensagem_sucesso, true);
           this.ngOnInit();
-          //this.ListarEmpresas();
+
         }, error => {
           
-          console.log('Erro ao excluir dado')
+          console.log('Erro ao excluir dado');
+          this.alertService.error(appConfig.mensagem_erro, true);
 
           // if (appConfig.exibir_erros_Backend) {
           // 	this.alertService.error(error);
