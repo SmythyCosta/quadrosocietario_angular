@@ -50,7 +50,7 @@
                 <form [formGroup]="formEmpresa">
                     <div class="form-group">
                         <label for="empresa">Empresa</label>
-                        <input type="text" name="nome" id="nome" class="form-control" required [(ngModel)]="empresaModel.nome" formControlName="nome" maxlength="100" minlength="2">
+                        <input type="text" name="nome" id="nome" class="form-control" required [(ngModel)]="empresa.nome" formControlName="nome" maxlength="100" minlength="2">
                         <validacao-message *ngIf="formEmpresa.get('nome').errors?.required" text="Campo obrigatório!"></validacao-message>
                     </div>
                     <button type="submit" [disabled]="!formEmpresa.valid" class="btn btn-primary" (click)="salvar(this.empresaModel)"> Submit </button>

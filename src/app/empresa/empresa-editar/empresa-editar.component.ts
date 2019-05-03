@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   FormGroup, FormBuilder, Validators, ReactiveFormsModule, FormControl
 } from '@angular/forms';
@@ -6,6 +6,7 @@ import { Router, ActivatedRoute, ParamMap, Params } from '@angular/router';
 import { Http } from '@angular/http';
 import { EmpresaService, AlertService } from '../../_services/index';
 import { appConfig } from '../../app.config';
+import { Empresa } from '../../_models/index';
 
 @Component({
   selector: 'app-empresa-editar',
@@ -15,7 +16,7 @@ import { appConfig } from '../../app.config';
 export class EmpresaEditarComponent implements OnInit {
 
   formEmpresa: FormGroup;
-  empresaModel: any = {};
+  empresa: Empresa;
   id: number;
 
   constructor(
@@ -28,6 +29,7 @@ export class EmpresaEditarComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.empresa = new Empresa();
     this.checkIssetID();
     this.validacaoFormulario();
   }
@@ -53,12 +55,7 @@ export class EmpresaEditarComponent implements OnInit {
   detalheEmpresa(id) {
     this.empresaService.getEmpresa(id)
       .subscribe(data => {
-
-        this.empresaModel = {
-          id: data.empresa.id,
-          nome: data.empresa.nome,
-        };
-
+        this.empresa = data.empresa;
       }, error => {
         this.router.navigate(['/empresas']);
       });
