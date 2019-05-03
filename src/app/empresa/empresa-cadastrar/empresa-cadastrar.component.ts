@@ -15,9 +15,8 @@ import { appConfig } from '../../app.config';
 })
 export class EmpresaCadastrarComponent implements OnInit, OnDestroy {
 
-
-  formEmpresa: FormGroup;          // para validar o formulario.
-  empresaModel: any = {};      // para os dados deste model.
+  formEmpresa: FormGroup;       
+  empresaModel: any = {};
 
   constructor(
     private http: Http,
@@ -45,22 +44,12 @@ export class EmpresaCadastrarComponent implements OnInit, OnDestroy {
     this.empresaService.cadastrarEmpresa(this.formEmpresa.value)
       .subscribe(data => {
 
-        
-        //this.ngOnInit();
         this.alertService.success(appConfig.mensagem_sucesso, true);
         this.ngOnDestroy();
 
       }, error => {
 
         this.alertService.error(appConfig.mensagem_erro, false);
-
-
-        // if (appConfig.exibir_erros_Backend) {
-        //     this.alertService.error(error);
-        // } else {
-        //     this.alertService.error(appConfig.mensagem_erro);
-        // }
-
 
       });
   }
