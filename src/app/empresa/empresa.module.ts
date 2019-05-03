@@ -5,15 +5,18 @@ import { FormsModule }  from '@angular/forms';
 import { EmpresaListComponent }    from './empresa-list/empresa-list.component';
 import { EmpresaFormComponent }    from './empresa-form/empresa-form.component';
 import { EmpresaRoutes }           from './empresa-routes';
-import { EmpresaService }          from '../_services/empresa.service';
+import { EmpresaService, AlertService }          from '../_services/index';
+import { DirectivasModule } from '../_directives/directives.module';
+
 
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
+        DirectivasModule,
         EmpresaRoutes
     ],
     declarations: [EmpresaListComponent, EmpresaFormComponent],
-    providers:[EmpresaService]
+    providers:[EmpresaService, AlertService]
 })
 export class EmpresaModule { }

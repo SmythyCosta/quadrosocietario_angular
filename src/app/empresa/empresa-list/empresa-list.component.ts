@@ -41,8 +41,9 @@ export class EmpresaListComponent {
 		if (result) {
 			this.empresaService.deletarEmpresa(id)
 				.subscribe(data => {				
-                    //this.alertService.success(data.mesg, true);
+                    this.alertService.success('Empresa removida com sucesso.', true);
                     this.ngOnInit();
+                    //this.ListarEmpresas();
 				},error =>{
 
                     console.log('Erro ao excluir dado')

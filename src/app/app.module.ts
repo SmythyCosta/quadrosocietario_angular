@@ -14,19 +14,18 @@ import { AppComponent } from './app.component';
 import { FullLayoutComponent } from './layout/full-layout.component';
 
 
-
 @NgModule({
-  declarations: [
-    AppComponent,
-    FullLayoutComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule,
-    AppRoutes
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        FullLayoutComponent
+    ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        HttpModule,
+        AppRoutes
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
