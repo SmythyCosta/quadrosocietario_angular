@@ -10,14 +10,51 @@ import { EmpresaService } from '../../_services/empresa.service';
 })
 export class EmpresaListComponent {
 
-    public titlePage:String = "Category";
-    public countJson:number;
+    titlePage:String = "Empresas";
+    countJson:number;
+
+    listEmpresas: Object[];
 
     constructor(
         public router: Router,
         private http: Http,
-        private dataService: EmpresaService
+        private empresaService:EmpresaService
     ) {}
+
+    ngOnInit() {
+        this.ListarEmpresas();
+    }
+
+    ListarEmpresas() {
+		this.empresaService.getEmpresas()
+			.subscribe( data => {
+                this.listEmpresas = data.empresa;
+                
+                console.log('JSON com lista de empresas')
+                console.log(this.listEmpresas);
+			});
+    }
+    
+    deletarEmpresa(id, nome) {
+		let result = confirm("Tem certeza que deseja excluir " + nome + " ?");
+		if (result) {
+			this.empresaService.deletarEmpresa(id)
+				.subscribe(data => {				
+                    //this.alertService.success(data.mesg, true);
+                    this.ngOnInit();
+				},error =>{
+
+                    console.log('Erro ao excluir dado')
+					
+					// if (appConfig.exibir_erros_Backend) {
+					// 	this.alertService.error(error);
+					// } else {
+					// 	this.alertService.error(appConfig.mensagem_erro_sisAdmin);
+					// }
+
+				});
+		}
+	}
 
     
     

@@ -14,13 +14,25 @@ export class EmpresaFormComponent {
 
     titlePage:String = "Empresa";
     titleBarNavegation:String = "Add";
+
+    listEmpresas: Object[];
     
     constructor(
         public  router: Router,
         private routeParams: ActivatedRoute,
         private http:Http,
-        private dataService:EmpresaService
+        private empresaService:EmpresaService
     ) {}
+
+
+    ListarEmpresas() {
+		this.empresaService.getEmpresas()
+			.subscribe( data => {
+                this.listEmpresas = data.empresa;
+                
+                console.log(this.listEmpresas);
+			});
+	}
 
     
     

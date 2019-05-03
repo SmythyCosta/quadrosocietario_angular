@@ -1,0 +1,6 @@
+{
+	"/api": {
+		"target": "http://localhost/quadrosocietario-symfony/api-socios-empresa/web/api/v1/",
+		"secure": false
+	}
+}
