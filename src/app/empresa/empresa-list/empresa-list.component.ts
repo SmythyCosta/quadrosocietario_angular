@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Http } from '@angular/http';
-import { EmpresaService } from '../../_services/empresa.service';
+import { EmpresaService, AlertService } from '../../_services/index';
 
 @Component({
     selector: 'app-empresa-list',
@@ -18,7 +18,8 @@ export class EmpresaListComponent {
     constructor(
         public router: Router,
         private http: Http,
-        private empresaService:EmpresaService
+        private empresaService:EmpresaService,
+        private alertService: AlertService
     ) {}
 
     ngOnInit() {
