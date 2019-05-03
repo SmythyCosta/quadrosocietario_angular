@@ -14,6 +14,7 @@ import { appConfig } from '../../app.config';
 export class EmpresaListarComponent implements OnInit {
 
   empresas: Array<Empresa>;
+  countJson:number;
 
   constructor(
     public router: Router,
@@ -30,6 +31,7 @@ export class EmpresaListarComponent implements OnInit {
     this.empresaService.getEmpresas()
       .subscribe(data => {
         this.empresas = data.empresas;
+        this.countJson = this.lengthJson(this.empresas);
 
         // console.log('JSON com lista de empresas')
         // console.log(this.empresas);
@@ -57,6 +59,11 @@ export class EmpresaListarComponent implements OnInit {
 
         });
     }
+  }
+
+  lengthJson(obj) {
+    //count elements
+    return Object.keys(obj).length;
   }
 
 

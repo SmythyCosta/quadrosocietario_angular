@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ValidacaoMessageComponent } from './validacao-message/validacao-message.component';
+import { BarNavegationComponent } from './bar-navegation/bar-navegation.component';
 
 
 @NgModule({
@@ -9,7 +10,8 @@ import { ValidacaoMessageComponent } from './validacao-message/validacao-message
         CommonModule,
     ],
     declarations: [
-        ValidacaoMessageComponent
+        ValidacaoMessageComponent,
+        BarNavegationComponent
     ],
     exports: [
         ValidacaoMessageComponent

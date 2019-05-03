@@ -1,73 +1,55 @@
 <div class="content">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h2 style="text-align: center">Empresas</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item">
-                            Menu
-                        </li>
-                        <li class="breadcrumb-item">
-                            Empresa
-                        </li>
-                        <li class="breadcrumb-item active" aria-current="page">List</li>
-                    </ol>
-                </nav>
-            </div>
-            <div class="col-md-8"></div>
-        </div>
-
-
-        <div class="row">
-            <div class="col-md-12">
-                <button type="button" class="btn btn-danger" routerLink="/empresas">Listar</button>
-                <button type="button" class="btn btn-primary" routerLink="/empresas/cadastrar">Cadastrar</button>
-                <!-- Rows {{countJson}} -->
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-12">
-                <alert></alert>
-            </div>
-        </div>
-
-
-        <div class="row">
-            <div class="col-md-12">
-                <div class="table-responsive">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>#ID</th>
-                                <th>Nome da Empresa</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let obj of empresas; let i = index">
-                                <td>{{obj.id}}</td>
-                                <td>{{obj.nome}}</td>
-                                <td>
-                                        <button type="button" class="btn btn-success btn-sm"> Exibir Socios </button>
-                                        <button type="button" class="btn btn-primary btn-sm" [routerLink]="['/empresas/editar/', obj.id]"> Editar </button>
-                                        <button type="button" class="btn btn-danger btn-sm" (click)="deletarEmpresa(obj.id, obj.nome)"> Excluir </button>
-                                    <!-- <button type="button" class="btn btn-danger btn-sm" > Delete </button> 
-
-                                    <button type="button" class="btn btn-primary btn-sm" [routerLink]="['/category/form', obj.id]"> Edit </button> -->
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-
-        
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 style="text-align: center">Empresas</h2>
+      </div>
     </div>
+
+
+    <div class="row">
+      <div class="col-md-12 navegation-bar">
+        <button type="button" class="btn btn-danger" routerLink="/empresas">Listar</button>
+        <button type="button" class="btn btn-primary" routerLink="/empresas/cadastrar">Cadastrar</button>
+        Total de resultados: {{countJson}}
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-md-12">
+        <alert></alert>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>#ID</th>
+                <th>Nome da Empresa</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let obj of empresas; let i = index">
+                <td>{{obj.id}}</td>
+                <td>{{obj.nome}}</td>
+                <td>
+                  <button type="button" class="btn btn-success btn-sm"> Exibir Socios </button>
+                  <button type="button" class="btn btn-primary btn-sm" [routerLink]="['/empresas/editar/', obj.id]"> Editar </button>
+                  <button type="button" class="btn btn-danger btn-sm" (click)="deletarEmpresa(obj.id, obj.nome)"> Excluir </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
 </div>
