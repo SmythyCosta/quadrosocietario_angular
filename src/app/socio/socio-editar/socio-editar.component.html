@@ -1,3 +1,72 @@
-<p>
-  socio-editar works!
-</p>
+<div class="content">
+    <div class="container">
+  
+  
+      <div class="row">
+        <div class="col-md-12">
+          <h2 style="text-align: center"> Sócio </h2>
+        </div>
+      </div>
+  
+  
+      <div class="row">
+        <div class="col-md-4">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                Menu
+              </li>
+              <li class="breadcrumb-item">
+                Sócio
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">Cadastro</li>
+            </ol>
+          </nav>
+        </div>
+        <div class="col-md-8"></div>
+      </div>
+  
+  
+      <div class="row">
+        <div class="col-md-12">
+          <button type="button" class="btn btn-danger" routerLink="/socios">Listar</button>
+          <button type="button" class="btn btn-primary" routerLink="/socios/cadastrar">Cadastrar</button>
+        </div>
+      </div>
+  
+  
+      <div class="row">
+        <div class="col-md-12">
+          <alert></alert>
+        </div>
+      </div>
+  
+  
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+          <!-- BEGIN form -->
+          <!--   ======================================================================== -->
+          <form [formGroup]="formSocio">
+            <div class="form-group">
+              <label for="empresa">Nome do Sócio</label>
+              <input type="text" name="nome" id="nome" class="form-control" required [(ngModel)]="socioModel.nome" formControlName="nome"
+                maxlength="100" minlength="2">
+              <validacao-message *ngIf="formSocio.get('nome').errors?.required" text="Campo obrigatório!"></validacao-message>
+            </div>
+            <div class="form-group">
+              <label for="empresa">Empresa</label>
+              <select id="empresa" class="form-control" formControlName="empresa_id" required [(ngModel)]="socioModel.empresa_id">
+                <option *ngFor="let emp of listEmpresas" value="{{emp.id}}">{{emp.nome}}</option>
+              </select>
+            </div>
+            <button type="submit" [disabled]="!formSocio.valid" class="btn btn-primary" (click)="salvar()"> Submit </button>
+          </form>
+          <!-- END form -->
+          <!-- ======================================================================== -->
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+  
+    </div>
+  </div>

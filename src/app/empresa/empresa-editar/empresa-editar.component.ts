@@ -3,7 +3,6 @@ import {
   FormGroup, FormBuilder, Validators, ReactiveFormsModule, FormControl
 } from '@angular/forms';
 import { Router, ActivatedRoute, ParamMap, Params } from '@angular/router';
-import { Http } from '@angular/http';
 import { EmpresaService, AlertService } from '../../_services/index';
 import { appConfig } from '../../app.config';
 import { Empresa } from '../../_models/index';
@@ -20,7 +19,6 @@ export class EmpresaEditarComponent implements OnInit {
   id: number;
 
   constructor(
-    private http: Http,
     private router: Router,
     private routeParams: ActivatedRoute,
     private empresaService: EmpresaService,
