@@ -45,7 +45,7 @@
                 <td>{{obj.id}}</td>
                 <td>{{obj.nome}}</td>
                 <td>
-                  <button type="button" class="btn btn-success btn-sm"> Exibir Socios </button>
+                  <button type="button" class="btn btn-success btn-sm" [routerLink]="['/empresas/exibe-socios/', obj.id]"> Exibir Socios </button>
                   <button type="button" class="btn btn-primary btn-sm" [routerLink]="['/empresas/editar/', obj.id]"> Editar </button>
                   <button type="button" class="btn btn-danger btn-sm" (click)="deletarEmpresa(obj.id, obj.nome)"> Excluir </button>
                 </td>

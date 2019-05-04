@@ -11,6 +11,7 @@ import { EmpresaCadastrarComponent } from './empresa-cadastrar/empresa-cadastrar
 import { EmpresaEditarComponent } from './empresa-editar/empresa-editar.component';
 import { SharedModule } from '../_shared/shared.module';
 import { NgSpinKitModule } from 'ng-spin-kit';
+import { EmpresaExibeSociosComponent } from './empresa-exibe-socios/empresa-exibe-socios.component';
 
 
 
@@ -27,7 +28,8 @@ import { NgSpinKitModule } from 'ng-spin-kit';
   declarations: [
     EmpresaListarComponent,
     EmpresaCadastrarComponent,
-    EmpresaEditarComponent
+    EmpresaEditarComponent,
+    EmpresaExibeSociosComponent
   ],
   providers: [EmpresaService, AlertService]
 })
