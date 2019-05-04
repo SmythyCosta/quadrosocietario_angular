@@ -23,7 +23,13 @@
     </div>
 
 
-    <div class="row">
+    <!-- ============================================================== -->
+    <!-- Listagem dos dados -->
+    <!-- ============================================================== -->
+    <sk-folding-cube [isRunning]="loading"></sk-folding-cube>
+
+    
+    <div class="row" *ngIf="!loading">
       <div class="col-md-12">
         <div class="table-responsive">
           <table class="table">

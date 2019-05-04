@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Http } from '@angular/http';
 import { EmpresaService, AlertService } from '../../_services/index';
 import { Empresa } from '../../_models/index';
 import { appConfig } from '../../app.config';
@@ -15,10 +13,9 @@ export class EmpresaListarComponent implements OnInit {
 
   empresas: Array<Empresa>;
   countJson:number;
+  loading: boolean; // para o load.
 
   constructor(
-    public router: Router,
-    private http: Http,
     private empresaService: EmpresaService,
     private alertService: AlertService
   ) { }
@@ -28,10 +25,15 @@ export class EmpresaListarComponent implements OnInit {
   }
 
   ListarEmpresas() {
+    this.loading = true; 
     this.empresaService.getEmpresas()
       .subscribe(data => {
         this.empresas = data.empresas;
         this.countJson = this.lengthJson(this.empresas);
+        
+        setTimeout(() => {
+          this.loading = false;
+        }, 300 );
 
         // console.log('JSON com lista de empresas')
         // console.log(this.empresas);

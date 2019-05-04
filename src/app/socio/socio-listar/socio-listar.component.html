@@ -1,3 +1,60 @@
-<p>
-  socio-listar works!
-</p>
+<div class="content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 style="text-align: center">Sócios</h2>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-md-12 navegation-bar">
+        <button type="button" class="btn btn-danger" routerLink="/socios">Listar</button>
+        <button type="button" class="btn btn-primary" routerLink="/socios/cadastrar">Cadastrar</button>
+        Total de resultados: {{countJson}}
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-md-12">
+        <alert></alert>
+      </div>
+    </div>
+
+
+    <!-- ============================================================== -->
+    <!-- Listagem dos dados -->
+    <!-- ============================================================== -->
+    <sk-folding-cube [isRunning]="loading"></sk-folding-cube>
+
+
+    <div class="row" *ngIf="!loading">
+      <div class="col-md-12">
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>#ID</th>
+                <th>Nome do Sócio</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let obj of socios; let i = index">
+                <td>{{obj.id}}</td>
+                <td>{{obj.nome}}</td>
+                <td>
+                  <button type="button" class="btn btn-primary btn-sm" [routerLink]="['/socios/editar/', obj.id]"> Editar </button>
+                  <button type="button" class="btn btn-danger btn-sm" (click)="deletarSocio(obj.id, obj.nome)"> Excluir </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
