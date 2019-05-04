@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { EmpresaRoutes } from './empresa-routes';
-import { EmpresaService, AlertService } from '../_services/index';
+import { EmpresaService, AlertService, SocioService } from '../_services/index';
 import { DirectivasModule } from '../_directives/directives.module';
 
 import { EmpresaListarComponent } from './empresa-listar/empresa-listar.component';
@@ -31,6 +31,6 @@ import { EmpresaExibeSociosComponent } from './empresa-exibe-socios/empresa-exib
     EmpresaEditarComponent,
     EmpresaExibeSociosComponent
   ],
-  providers: [EmpresaService, AlertService]
+  providers: [EmpresaService, AlertService, SocioService]
 })
 export class EmpresaModule { }

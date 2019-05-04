@@ -53,4 +53,13 @@ export class EmpresaService {
         return this.http.delete(env.baseApiUrl + 'empresas/'+ id);
     }
 
+    /**
+     * Exibe os Socios pro empresa
+     * @param idEmpresa 
+     */
+    getSociosPorEmpresa(idEmpresa) {
+        return this.http.get(env.baseApiUrl + 'empresas'+'/'+ idEmpresa + '/socios')
+                            .map((response: Response) => response.json());
+    }
+
 }

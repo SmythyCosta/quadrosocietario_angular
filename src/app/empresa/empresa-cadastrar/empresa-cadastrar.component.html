@@ -1,65 +1,66 @@
-<div class="content">
-    <div class="container">
+<div class="content-quadro-sociativo">
+	<div class="container">
 
 
-        <div class="row">
-            <div class="col-md-12">
-                <h2 style="text-align: center"> {{titlePage}} </h2>
-            </div>
-        </div>
+		<div class="row">
+			<div class="col-md-12">
+				<h2 style="text-align: center"> {{titlePage}} </h2>
+			</div>
+		</div>
 
 
-        <div class="row">
-            <div class="col-md-4">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item">
-                            Menu
-                        </li>
-                        <li class="breadcrumb-item">
-                            Empresa
-                        </li>
-                        <li class="breadcrumb-item active" aria-current="page">Cadastro</li>
-                    </ol>
-                </nav>
-            </div>
-            <div class="col-md-8"></div>
-        </div>
+		<div class="row">
+			<div class="col-md-4">
+				<nav aria-label="breadcrumb">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item">
+							Menu
+						</li>
+						<li class="breadcrumb-item">
+							Empresa
+						</li>
+						<li class="breadcrumb-item active" aria-current="page">Cadastro</li>
+					</ol>
+				</nav>
+			</div>
+			<div class="col-md-8"></div>
+		</div>
 
 
-        <div class="row">
-            <div class="col-md-12">
-                <button type="button" class="btn btn-danger" routerLink="/empresas">Listar</button>
-                <button type="button" class="btn btn-primary" routerLink="/empresas/cadastrar">Cadastrar</button>
-            </div>
-        </div>
+		<div class="row">
+			<div class="col-md-12">
+				<button type="button" class="btn btn-danger" routerLink="/empresas">Listar</button>
+				<button type="button" class="btn btn-primary" routerLink="/empresas/cadastrar">Cadastrar</button>
+			</div>
+		</div>
 
 
-        <div class="row">
-            <div class="col-md-12">
-                <alert></alert>
-            </div>
-        </div>
+		<div class="row">
+			<div class="col-md-12">
+				<alert></alert>
+			</div>
+		</div>
 
 
-        <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-8">
-                <!-- BEGIN form -->
-                <!--   ======================================================================== -->
-                <form [formGroup]="formEmpresa">
-                    <div class="form-group">
-                        <label for="empresa">Empresa</label>
-                        <input type="text" name="nome" id="nome" class="form-control" required [(ngModel)]="empresaModel.nome" formControlName="nome" maxlength="100" minlength="2">
-                        <validacao-message *ngIf="formEmpresa.get('nome').errors?.required" text="Campo obrigatório!"></validacao-message>
-                    </div>
-                    <button type="submit" [disabled]="!formEmpresa.valid" class="btn btn-primary" (click)="salvar(this.empresa)"> Submit </button>
-                </form>
-                <!-- END form -->
-                <!-- ======================================================================== -->
-            </div>
-            <div class="col-md-2"></div>
-        </div>
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+				<!-- BEGIN form -->
+				<!--   ======================================================================== -->
+				<form [formGroup]="formEmpresa">
+					<div class="form-group">
+						<label for="empresa">Empresa</label>
+						<input type="text" name="nome" id="nome" class="form-control" required [(ngModel)]="empresaModel.nome" formControlName="nome"
+						 maxlength="100" minlength="2">
+						<validacao-message *ngIf="formEmpresa.get('nome').errors?.required" text="Campo obrigatório!"></validacao-message>
+					</div>
+					<button type="submit" [disabled]="!formEmpresa.valid" class="btn btn-primary" (click)="salvar(this.empresa)"> Submit </button>
+				</form>
+				<!-- END form -->
+				<!-- ======================================================================== -->
+			</div>
+			<div class="col-md-2"></div>
+		</div>
 
-    </div>
+	</div>
 </div>

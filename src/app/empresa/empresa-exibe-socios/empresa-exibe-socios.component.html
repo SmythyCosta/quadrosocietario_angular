@@ -1,3 +1,32 @@
-<p>
-  empresa-exibe-socios works!
-</p>
+<div class="content-quadro-sociativo">
+  <div class="container">
+
+
+    <div class="row">
+      <div class="col-md-12">
+        <h3 style="text-align: center"> {{empresa.nome}} </h3>
+        <p style="text-align: center">Resultados encontrados: {{countJson}}</p>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <!-- BEGIN form -->
+        <!--   ======================================================================== -->
+        <form>
+          <div class="form-group">
+            <ul class="list-group" *ngFor="let obj of socios; let i = index">
+              <li class="list-group-item">{{obj.nome}}</li>
+            </ul>
+          </div>
+        </form>
+        <!-- END form -->
+        <!-- ======================================================================== -->
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+
+  </div>
+</div>

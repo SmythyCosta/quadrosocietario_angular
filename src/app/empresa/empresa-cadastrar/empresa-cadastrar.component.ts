@@ -9,7 +9,6 @@ import { appConfig } from '../../app.config';
 @Component({
   selector: 'app-empresa-cadastrar',
   templateUrl: './empresa-cadastrar.component.html',
-  styleUrls: ['./empresa-cadastrar.component.css']
 })
 export class EmpresaCadastrarComponent implements OnInit, OnDestroy {
 
