@@ -55,6 +55,11 @@ export class EmpresaEditarComponent implements OnInit {
       .subscribe(data => {
         this.empresa = data.empresa;
       }, error => {
+
+        // if (error.status == 404) {
+        //   this.alertService.error('Empresa não encontrada', false);
+        // }
+
         this.router.navigate(['/empresas']);
       });
   }

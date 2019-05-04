@@ -58,7 +58,10 @@ export class SocioEditarComponent implements OnInit {
       if (this.id) {
         this.detalheSocio(this.id);
       } else {
-        this.router.navigate(['/condominio']);
+        this.router.navigate(['/socios']);
+        // if (error.status == 404) {
+        //   this.alertService.error('Empresa não encontrada', false);
+        // }
       }
     });
   }
