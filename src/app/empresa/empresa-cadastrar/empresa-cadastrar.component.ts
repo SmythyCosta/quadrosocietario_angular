@@ -2,8 +2,6 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import {
   FormGroup, FormBuilder, Validators, ReactiveFormsModule, FormControl
 } from '@angular/forms';
-import { Router } from '@angular/router';
-import { Http } from '@angular/http';
 import { EmpresaService, AlertService } from '../../_services/index';
 import { appConfig } from '../../app.config';
 
@@ -19,8 +17,6 @@ export class EmpresaCadastrarComponent implements OnInit, OnDestroy {
   empresaModel: any = {};
 
   constructor(
-    private http: Http,
-    private router: Router,
     private empresaService: EmpresaService,
     private alertService: AlertService,
     private formBuilder: FormBuilder,

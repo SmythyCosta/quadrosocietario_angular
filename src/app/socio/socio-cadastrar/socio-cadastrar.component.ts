@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import {
   FormGroup, FormBuilder, Validators, ReactiveFormsModule, FormControl
 } from '@angular/forms';
-import { SocioService, AlertService } from '../../_services/index';
+import { SocioService, EmpresaService, AlertService } from '../../_services/index';
 import { appConfig } from '../../app.config';
 
 
@@ -13,16 +13,19 @@ import { appConfig } from '../../app.config';
 })
 export class SocioCadastrarComponent implements OnInit {
 
-  formSocio: FormGroup;       
+  formSocio: FormGroup;
   socioModel: any = {};
+  listEmpresas: Object[] = [];
 
   constructor(
     private socioService: SocioService,
+    private empresaService: EmpresaService,
     private alertService: AlertService,
     private formBuilder: FormBuilder,
   ) { }
 
   ngOnInit() {
+    this.selectEmpresas();
     this.validacaoFormulario();
   }
 
@@ -34,13 +37,23 @@ export class SocioCadastrarComponent implements OnInit {
     this.formSocio = this.formBuilder.group({
       nome: ['', Validators.required],
       empresa_id: ['', Validators.required]
-     });
+    });
+  }
+
+  selectEmpresas() {
+    this.empresaService.getEmpresas()
+      .subscribe(data => {
+        this.listEmpresas = data.empresas;
+
+        // console.log('listando empresas');
+        // console.log(data);
+      });
   }
 
   salvar() {
     this.socioService.cadastrarSocio(this.formSocio.value)
       .subscribe(data => {
-        
+
         this.alertService.success(appConfig.mensagem_sucesso, true);
         this.ngOnDestroy();
 
