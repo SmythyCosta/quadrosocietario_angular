@@ -8,8 +8,7 @@ import { appConfig } from '../../app.config';
 
 @Component({
   selector: 'app-socio-cadastrar',
-  templateUrl: './socio-cadastrar.component.html',
-  styleUrls: ['./socio-cadastrar.component.css']
+  templateUrl: './socio-cadastrar.component.html'
 })
 export class SocioCadastrarComponent implements OnInit {
 

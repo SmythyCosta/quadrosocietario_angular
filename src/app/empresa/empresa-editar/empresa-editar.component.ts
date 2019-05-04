@@ -10,7 +10,6 @@ import { Empresa } from '../../_models/index';
 @Component({
   selector: 'app-empresa-editar',
   templateUrl: './empresa-editar.component.html',
-  styleUrls: ['./empresa-editar.component.css']
 })
 export class EmpresaEditarComponent implements OnInit {
 

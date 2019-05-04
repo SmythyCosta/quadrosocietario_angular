@@ -6,8 +6,7 @@ import { appConfig } from '../../app.config';
 
 @Component({
   selector: 'app-empresa-listar',
-  templateUrl: './empresa-listar.component.html',
-  styleUrls: ['./empresa-listar.component.css']
+  templateUrl: './empresa-listar.component.html'
 })
 export class EmpresaListarComponent implements OnInit {
 

@@ -7,8 +7,7 @@ import { Empresa, Socio } from '../../_models/index';
 
 @Component({
   selector: 'app-empresa-exibe-socios',
-  templateUrl: './empresa-exibe-socios.component.html',
-  styleUrls: ['./empresa-exibe-socios.component.css']
+  templateUrl: './empresa-exibe-socios.component.html'
 })
 export class EmpresaExibeSociosComponent implements OnInit {
 

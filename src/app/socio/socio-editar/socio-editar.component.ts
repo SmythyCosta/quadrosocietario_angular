@@ -9,8 +9,7 @@ import { Socio } from '../../_models/index';
 
 @Component({
   selector: 'app-socio-editar',
-  templateUrl: './socio-editar.component.html',
-  styleUrls: ['./socio-editar.component.css']
+  templateUrl: './socio-editar.component.html'
 })
 export class SocioEditarComponent implements OnInit {
 
